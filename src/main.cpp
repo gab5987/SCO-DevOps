@@ -1,7 +1,7 @@
 #include <Arduino.h>
 #include <ESP8266WiFi.h>
 #include <WiFiClient.h>
-#include <..\include\pubsubclient-master\src\PubSubClient.h>
+#include <../include/pubsubclient-master/src/PubSubClient.h>
 //#include <PubSubClient.h>
 
 const char* SSID = "#########"; // SSID da Rede WIFI

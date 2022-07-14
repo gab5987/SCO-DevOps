@@ -6,7 +6,11 @@
 */
 
 #include "PubSubClient.h"
-#include "Arduino.h"
+#include <Arduino.h>
+#include <stdlib.h>
+#include <string.h>
+
+size_t strnlen (const char *, size_t);
 
 PubSubClient::PubSubClient() {
     this->_state = MQTT_DISCONNECTED;
