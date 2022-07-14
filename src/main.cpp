@@ -2,7 +2,7 @@
 #include <ESP8266WiFi.h>
 #include <WiFiClient.h>
 #include <../include/pubsubclient-master/src/PubSubClient.h>
-//#include <PubSubClient.h>
+#include <../include/DHT_sensor_library_for_ESPx-1.18.0/DHTesp.h>
 
 const char* SSID = "#########"; // SSID da Rede WIFI
 const char* PASSWORD = "#########"; // Senha da Rede WIFI
