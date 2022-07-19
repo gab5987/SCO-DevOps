@@ -7,6 +7,8 @@ PubSubClient MQTT(CLIENT);
 
 void initMQTT(){
     MQTT.setServer(MQTT_SERVER, 1883);
+    MQTT.setCallback(feedbackMQTT);
+    MQTT.subscribe("JjQZFhodDDghISIALBYQNS8/feedback");
 }
 
 void reconnetMQTT() {
@@ -16,6 +18,8 @@ void reconnetMQTT() {
   }else{
     delay(3000);
     }
+  MQTT.setCallback(feedbackMQTT);
+  MQTT.subscribe("JjQZFhodDDghISIALBYQNS8/feedback");
   }
 }
 
@@ -30,4 +34,11 @@ void loopMQTT() {
         reconnetMQTT();
     }
     MQTT.loop();
+}
+
+void feedbackMQTT(char *topic, byte *payload, unsigned int length) { 
+    String message;
+    for (int i = 0; i < length; i++) {
+        message = message + (char) payload[i];  // convert *byte to string
+    }
 }

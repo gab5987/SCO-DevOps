@@ -6,6 +6,7 @@ char bufEpoch[20];
 unsigned long lastMessage;
 
 void setup(void){
+  Serial.begin(115200);
   setupWIFI();
   initMQTT();
   setupTimeClient();
