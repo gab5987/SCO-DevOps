@@ -1,7 +1,7 @@
 #include "helper.h"
 
-const char* SSID = "#######"; // WIFI SSID 
-const char* PASSWORD = "#######"; // WIFI Password
+const char* SSID = "GABRIEL_2G"; // WIFI SSID 
+const char* PASSWORD = "b1e3l245"; // WIFI Password
 
 // SETTING UP WIRELESS NETWORK
 void setupWIFI() {

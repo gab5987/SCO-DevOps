@@ -19,12 +19,10 @@ void reconnetMQTT() {
   }
 }
 
-void publishMQTT(char *msg, int th) {
-    if (th == 0) {
-      MQTT.publish("JjQZFhodDDghISIALBYQNS8/temperature", msg);
-    } else {
-      MQTT.publish("JjQZFhodDDghISIALBYQNS8/humidity", msg);
-    }
+void publishMQTT(String msg) {
+  char buf[50];
+  msg.toCharArray(buf, 50);
+  MQTT.publish("JjQZFhodDDghISIALBYQNS8/SCO", buf);
 }
 
 void loopMQTT() {

@@ -3,7 +3,7 @@
 dht DHT;
 const int dataPin = 5; // GPIO 5 -> pin D1
 
-float readDHT(int h) {
+String readDHT() {
     int chk = DHT.read11(dataPin);
-    return h ? DHT.humidity : DHT.temperature;
+    return String(DHT.humidity, 0) + "$" + String(DHT.temperature, 0);
 }

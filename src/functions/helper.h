@@ -6,14 +6,16 @@
 #include <WiFiClient.h>
 #include <PubSubClient.h>
 #include <dht.h>
-
-
+#include <NTPClient.h>
+#include <WiFiUdp.h>
 
 void setupWIFI();
 void initMQTT();
 void reconnetMQTT();
-void publishMQTT(char *msg, int th);
+void publishMQTT(String msg);
 void loopMQTT();
-float readDHT(int h);
+String readDHT();
+unsigned long getTime();
+void setupTimeClient();
 
 #endif
