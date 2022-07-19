@@ -18,5 +18,6 @@ String readDHT();
 unsigned long getTime();
 void setupTimeClient();
 void feedbackMQTT(char *topic, byte *payload, unsigned int length);
+void messageDigest(bool *receivedMessage);
 
 #endif

@@ -5,6 +5,8 @@ const char* MQTT_SERVER2 = "maqiatto.com";
 WiFiClient CLIENT;
 PubSubClient MQTT(CLIENT);
 
+String message;
+
 void initMQTT(){
     MQTT.setServer(MQTT_SERVER, 1883);
     MQTT.setCallback(feedbackMQTT);
@@ -37,7 +39,6 @@ void loopMQTT() {
 }
 
 void feedbackMQTT(char *topic, byte *payload, unsigned int length) { 
-    String message;
     for (int i = 0; i < length; i++) {
         message = message + (char) payload[i];  // convert *byte to string
     }
